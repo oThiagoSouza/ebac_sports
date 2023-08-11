@@ -9,21 +9,21 @@ const initialState: CarrinhoState = {
   itens: []
 }
 
-const carrinhoSlice = createSlice({
+const CarrinhoSlice = createSlice({
   name: 'carrinho',
   initialState,
   reducers: {
     adicionar: (state, action: PayloadAction<Produto>) => {
-      const product = action.payload
+      const produto = action.payload
 
-      if (state.itens.find((produto) => produto.id === product.id)) {
-        alert('Produto já foi adicionado')
+      if (state.itens.find((game) => game.id === produto.id)) {
+        alert('Item já adicionado')
       } else {
-        state.itens.push(product)
+        state.itens.push(produto)
       }
     }
   }
 })
 
-export const { adicionar } = carrinhoSlice.actions
-export default carrinhoSlice.reducer
+export const { adicionar } = CarrinhoSlice.actions
+export default CarrinhoSlice.reducer
